@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+  <!-- 萤火虫效果容器 -->
+  <div id="fireflies-container"></div>
+
   <!-- 顶部导航栏 -->
   <nav class="top-nav">
     <div class="nav-container">
@@ -34,5 +37,84 @@
       <p>Made with 💖 by Liya | © 2026</p>
     </footer>
   </div>
+
+  <script>
+    // 萤火虫动画
+    function createFireflies() {
+      const container = document.getElementById('fireflies-container');
+      const fireflyCount = 15;
+      
+      for (let i = 0; i < fireflyCount; i++) {
+        const firefly = document.createElement('div');
+        firefly.className = 'firefly';
+        
+        // 随机位置
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        firefly.style.left = x + '%';
+        firefly.style.top = y + '%';
+        
+        // 随机大小
+        const size = Math.random() * 8 + 8;
+        firefly.style.width = size + 'px';
+        firefly.style.height = size + 'px';
+        
+        // 随机动画参数
+        const duration = Math.random() * 8 + 6;
+        const delay = Math.random() * 5;
+        const speedX = (Math.random() - 0.5) * 2;
+        const speedY = (Math.random() - 0.5) * 2;
+        const amplitudeX = Math.random() * 100 + 50;
+        const amplitudeY = Math.random() * 100 + 50;
+        
+        firefly.style.setProperty('--duration', duration + 's');
+        firefly.style.setProperty('--delay', delay + 's');
+        firefly.style.setProperty('--speedX', speedX);
+        firefly.style.setProperty('--speedY', speedY);
+        firefly.style.setProperty('--ampX', amplitudeX + 'px');
+        firefly.style.setProperty('--ampY', amplitudeY + 'px');
+        
+        // 添加动画
+        firefly.style.animation = `fly ${duration}s ease-in-out ${delay}s infinite`;
+        
+        container.appendChild(firefly);
+      }
+    }
+    
+    // 添加CSS动画
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+      @keyframes fly {
+        0% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.3;
+        }
+        20% {
+          transform: translate(var(--ampX), calc(var(--ampY) * -1)) scale(1.3);
+          opacity: 1;
+        }
+        40% {
+          transform: translate(calc(var(--ampX) * -0.5), calc(var(--ampY) * -1.5)) scale(0.8);
+          opacity: 0.5;
+        }
+        60% {
+          transform: translate(calc(var(--ampX) * 1.5), calc(var(--ampY) * -0.5)) scale(1.2);
+          opacity: 0.9;
+        }
+        80% {
+          transform: translate(calc(var(--ampX) * -0.8), calc(var(--ampY) * 0.3)) scale(1);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.3;
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+    
+    // 页面加载完成后创建萤火虫
+    window.addEventListener('DOMContentLoaded', createFireflies);
+  </script>
 </body>
 </html>

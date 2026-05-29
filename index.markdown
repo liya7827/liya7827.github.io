@@ -4,7 +4,7 @@ title: 🏠 首页
 ---
 
 <div class="hero-section">
-  <h1>✨ 欢迎来到我的小天地！✨</h1>
+  <h1>欢迎来到 <span class="highlight-name">李娅</span> 的博客</h1>
   <p class="hero-subtitle">Hi~ 我是李娅，一名热爱技术的大三学生 💕</p>
   <a href="/about.html" class="btn">了解更多 →</a>
 </div>
