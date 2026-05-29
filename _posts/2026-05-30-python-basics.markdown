@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "🐍 Python编程基础入门"
-date: 2026-05-30
+date: 2026-05-26
 categories: Python 编程
 ---
 

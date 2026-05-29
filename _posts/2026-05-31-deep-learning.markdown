@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "🧠 深度学习入门"
-date: 2026-05-31
+date: 2026-05-27
 categories: 深度学习 人工智能
 ---
 
