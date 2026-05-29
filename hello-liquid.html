@@ -1,0 +1,24 @@
+---
+# front matter 告诉 Jekyll 处理这个文件
+title: "Liquid Demo"
+show_sidebar: true
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ "Hello World" | downcase }}</h1>
+    
+    {% if page.show_sidebar %}
+    <div class="sidebar">
+        <p>Sidebar content</p>
+    </div>
+    {% endif %}
+    
+    <p>当前时间：{{ site.time | date: "%Y-%m-%d %H:%M" }}</p>
+</body>
+</html>

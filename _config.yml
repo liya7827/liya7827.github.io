@@ -1,0 +1,30 @@
+title: My Cute Blog
+email: your-email@example.com
+description: >-
+  A cute and lovely personal blog
+baseurl: ""
+url: ""
+twitter_username: yourusername
+github_username: yourusername
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Minima theme customization
+minima:
+  date_format: "%b %-d, %Y"
+  skin: classic
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

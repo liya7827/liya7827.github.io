@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌸 {{ site.title }} 🌸</h1>
+      <p>{{ site.description }}</p>
+      <nav>
+        <a href="{{ '/' | relative_url }}">Home 🏠</a>
+        <a href="{{ '/about' | relative_url }}">About Me 🧁</a>
+        <a href="{{ '/hello-liquid.html' | relative_url }}">Liquid Demo 💧</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="card post-card">
+        <time class="post-date">📅 {{ page.date | date: "%Y年%m月%d日" }}</time>
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+      </article>
+    </main>
+
+    <footer>
+      <p>Made with lots of love 💖</p>
+    </footer>
+  </div>
+</body>
+</html>
