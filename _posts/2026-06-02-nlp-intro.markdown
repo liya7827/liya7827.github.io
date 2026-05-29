@@ -1,0 +1,116 @@
+---
+layout: post
+title: "🗣️ 自然语言处理入门指南"
+date: 2026-06-02
+categories: 人工智能 NLP
+---
+
+## 什么是自然语言处理？
+
+自然语言处理（Natural Language Processing，简称NLP）是人工智能的一个分支，研究如何让计算机理解、解释和生成人类语言。想象一下，能够与机器人对话、让电脑帮你写文章、自动翻译外语——这些都是NLP的应用！
+
+### NLP的应用场景
+
+| 应用 | 说明 | 例子 |
+|:---|:---|:---|
+| 🤖 聊天机器人 | 智能客服、虚拟助手 | Siri、小爱同学 |
+| 📝 文本生成 | 自动写作、文案生成 | ChatGPT |
+| 🌐 机器翻译 | 多语言互译 | Google翻译、有道翻译 |
+| �情感分析 | 判断评论是正面还是负面 | 电商评论分析 |
+| 🔍 信息抽取 | 从文本中提取关键信息 | 新闻摘要生成 |
+
+## Python NLP开发环境
+
+让我们开始搭建NLP开发环境：
+
+```bash
+# 安装必要的库
+pip install jieba        # 中文分词
+pip install nltk         # 自然语言工具包
+pip install transformers  # Hugging Face transformers
+pip install torch        # PyTorch深度学习框架
+```
+
+## 基础中文分词
+
+中文和英文不同，英文单词之间有空格分隔，而中文需要"分词"：
+
+```python
+import jieba
+
+text = "我是云南大学智能科学与技术专业的学生"
+
+# 精确模式
+words = jieba.lcut(text)
+print("/".join(words))
+# 输出：我/是/云南大学/智能科学/与/技术/专业/的/学生
+
+# 搜索引擎模式（更细粒度）
+words = jieba.lcut_for_search(text)
+print("/".join(words))
+```
+
+## 关键词提取
+
+```python
+import jieba.analyse
+
+text = """
+人工智能是当前科技发展的热点领域。机器学习和深度学习是人工智能的核心技术。
+自然语言处理让计算机能够理解和生成人类语言。计算机视觉则让机器能够看懂图片和视频。
+"""
+
+# 提取关键词（TF-IDF算法）
+keywords = jieba.analyse.extract_tags(text, topK=5)
+print("关键词：", keywords)
+```
+
+## 情感分析实战
+
+判断一段话的情感是正面还是负面：
+
+```python
+from snownlp import SnowNLP
+
+comments = [
+    "这个产品真的太好用了，强烈推荐！",
+    "质量一般般，没有想象中那么好",
+    "太差了，完全是浪费钱"
+]
+
+for comment in comments:
+    s = SnowNLP(comment)
+    sentiment = s.sentiments  # 0-1之间，越接近1越正面
+    print(f"评论：{comment}")
+    print(f"情感得分：{sentiment:.2f}")
+```
+
+## 现代NLP模型
+
+近年来，BERT、GPT等预训练模型大幅提升了NLP任务的效果：
+
+```python
+from transformers import pipeline
+
+# 使用中文情感分析模型
+classifier = pipeline("sentiment-analysis", model="uer/roberta-base-finetuned-chinanews-chinese")
+
+result = classifier("今天天气真好，心情很开心！")
+print(result)
+```
+
+## 学习路径建议
+
+1. 📚 **基础知识**：语言学基础、概率统计
+2. 🐍 **编程入门**：Python基础、数据处理
+3. 📊 **NLP基础**：分词、词性标注、命名实体识别
+4. 🤖 **深度学习**：RNN、LSTM、Transformer
+5. 🚀 **预训练模型**：BERT、GPT、ChatGPT
+
+## 推荐学习资源
+
+- 📖 书籍：《Python自然语言处理实战》、《统计自然语言处理》
+- 🌐 课程：李沐老师的深度学习课程、B站NLP教程
+- 💻 实践：Kaggle竞赛、Github开源项目
+
+自然语言处理是一个充满挑战和机遇的领域，期待你在这个方向有所收获！🌟
