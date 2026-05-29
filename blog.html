@@ -1,0 +1,26 @@
+---
+layout: default
+title: 📚 博客
+---
+
+<div class="hero-section">
+  <h1>📚 我的博客</h1>
+  <p class="hero-subtitle">记录学习历程，分享技术心得 💕</p>
+</div>
+
+<h2>📝 所有文章</h2>
+
+{% for post in site.posts %}
+<div class="card post-card">
+  <div class="post-date">📅 {{ post.date | date: "%Y年%m月%d日" }}</div>
+  <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+  <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+  <a href="{{ post.url }}" class="btn btn-outline">阅读全文 →</a>
+</div>
+{% endfor %}
+
+{% if site.posts.size == 0 %}
+<div class="card">
+  <p>暂无文章，敬请期待！🌸</p>
+</div>
+{% endif %}

@@ -1,36 +1,47 @@
 ---
-layout: cute
-title: About Me 🥰
+layout: default
+title: 📝 关于我
 ---
 
+<div class="hero-section">
+  <h1>🌸 关于我 🌸</h1>
+  <p class="hero-subtitle">了解更多关于我的故事 💕</p>
+</div>
+
 <div class="card about-section">
-  <h1>🌸 About Me 🌸</h1>
-  
-  <p>Hi! I'm so happy you visited my blog! Let me tell you a little about myself!</p>
-  
-  <h2>🎀 Who Am I?</h2>
-  <p>I'm a creative soul who loves all things cute and colorful! I enjoy coding, designing, and sharing my adventures with the world.</p>
-  
-  <h2>💻 My Journey</h2>
-  <p>I started coding because I wanted to create things that make people smile. Now I spend my days building websites, writing blog posts, and drinking way too much bubble tea! 🧋</p>
-  
-  <h2>🎨 My Skills</h2>
-  <ul class="skills-list">
-    <li>HTML/CSS</li>
-    <li>JavaScript</li>
-    <li>Python</li>
-    <li>UI/UX Design</li>
-    <li>Photography</li>
-  </ul>
-  
-  <h2>🌈 Fun Facts</h2>
+  <h2>🎀 自我介绍</h2>
+  <p>我是李娅，一名就读于云南大学智能科学与技术专业的大三学生。本专业横跨计算机技术、人工智能、软件工程、模式识别等多个领域。</p>
+  <p>在校期间，我系统研习编程语言、机器学习、算法设计、数据库应用与系统建模等核心课程，构建了完整的专业知识体系。</p>
+</div>
+
+<div class="card">
+  <h2>🎓 教育背景</h2>
   <ul>
-    <li>🐱 I have two adorable cats named Mochi and Sakura</li>
-    <li>🌸 My favorite color is pink (obviously!)</li>
-    <li>🍰 I can bake the most delicious cupcakes</li>
-    <li>✈️ I love traveling to cute cafes</li>
-    <li>📖 I read at least one book per week</li>
+    <li>📚 2023年至今：云南大学 - 智能科学与技术专业（本科）</li>
+    <li>🏆 主修课程：数据结构、人工智能导论、机器学习、深度学习、Python编程、算法设计等</li>
   </ul>
-  
-  <p>Thanks for stopping by! Let's stay connected! 💖</p>
+</div>
+
+<div class="card">
+  <h2>💻 技能特长</h2>
+  <ul class="skills-list">
+    <li>🐍 Python</li>
+    <li>🤖 机器学习</li>
+    <li>📊 数据分析</li>
+    <li>🌐 Web开发</li>
+    <li>📱 人工智能</li>
+    <li>🎨 前端设计</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>🌟 关于这个网站</h2>
+  <p>这是我的个人博客网站，记录了我在智能科学与技术领域的学习历程和心得分享。</p>
+  <p>在这里你可以找到：</p>
+  <ul>
+    <li>📚 技术博客文章</li>
+    <li>💡 学习笔记和心得</li>
+    <li>🎯 项目经验分享</li>
+    <li>📬 联系方式</li>
+  </ul>
 </div>

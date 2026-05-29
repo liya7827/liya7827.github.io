@@ -1,11 +1,11 @@
-title: My Cute Blog
-email: your-email@example.com
+title: 🌸 李娅的小天地 🌸
+email: 1985717997@qq.com
 description: >-
-  A cute and lovely personal blog
+  欢迎来到我的个人网站！这里记录了我的学习历程和技术分享。
 baseurl: ""
-url: ""
-twitter_username: yourusername
-github_username: yourusername
+url: "https://liya7827.github.io"
+twitter_username: liya7827
+github_username: liya7827
 
 # Build settings
 theme: minima
@@ -14,7 +14,7 @@ plugins:
 
 # Minima theme customization
 minima:
-  date_format: "%b %-d, %Y"
+  date_format: "%Y年%m月%d日"
   skin: classic
 
 exclude:

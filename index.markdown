@@ -1,52 +1,32 @@
 ---
-layout: cute
-title: My Cute Blog
+layout: default
+title: 🏠 首页
 ---
 
 <div class="hero-section">
-  <h1>🌸 My Cute Blog 🌸</h1>
-  <p class="hero-subtitle">Welcome to my lovely little corner of the internet! 💖</p>
-  <a href="#posts" class="btn">Let's Explore! 🚀</a>
+  <h1>✨ 欢迎来到我的小天地！✨</h1>
+  <p class="hero-subtitle">Hi~ 我是李娅，一名热爱技术的大三学生 💕</p>
+  <a href="/about.html" class="btn">了解更多 →</a>
 </div>
 
-## 🌟 About Me 🌟
-
+<h2>🎓 关于我</h2>
 <div class="card about-section">
-  <h2>Hi there! I'm a cute blogger! 🥰</h2>
-  <p>I love sharing my thoughts, ideas, and all the cute things in life! Here you'll find posts about tech, lifestyle, and everything that makes me smile.</p>
-  
-  <h3>My Favorite Things 🎀</h3>
-  <ul class="skills-list">
-    <li>🎨 Design</li>
-    <li>💻 Coding</li>
-    <li>📚 Reading</li>
-    <li>🌸 Flowers</li>
-    <li>🐱 Cats</li>
-    <li>🍰 Desserts</li>
-  </ul>
+  <p>我是李娅，就读于云南大学智能科学与技术专业。我热爱编程、人工智能和一切可爱的事物！</p>
+  <a href="/about.html" class="btn btn-outline">👀 查看详情</a>
 </div>
 
-## ✨ Latest Posts ✨
+<h2>📚 最新博客</h2>
+{% for post in site.posts limit:3 %}
+<div class="card post-card">
+  <div class="post-date">📅 {{ post.date | date: "%Y年%m月%d日" }}</div>
+  <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+  <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+</div>
+{% endfor %}
+<a href="/blog.html" class="btn">查看更多文章 →</a>
 
-<section id="posts">
-  {% for post in site.posts %}
-  <article class="card post-card">
-    <time class="post-date">📅 {{ post.date | date: "%Y年%m月%d日" }}</time>
-    <h2><a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a></h2>
-    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-    <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More →</a>
-  </article>
-  {% endfor %}
-</section>
-
-## 📬 Contact Me 📬
-
+<h2>💬 联系我</h2>
 <div class="card contact-section">
-  <h2>Let's be friends! 💝</h2>
-  <p>Feel free to reach out to me anytime!</p>
-  <div class="contact-links">
-    <a href="mailto:your-email@example.com">📧 Email</a>
-    <a href="https://github.com/yourusername" target="_blank">💼 GitHub</a>
-    <a href="https://twitter.com/yourusername" target="_blank">🐦 Twitter</a>
-  </div>
+  <p>邮箱：<a href="mailto:1985717997@qq.com">1985717997@qq.com</a></p>
+  <p>GitHub：<a href="https://github.com/liya7827" target="_blank">@liya7827</a></p>
 </div>
