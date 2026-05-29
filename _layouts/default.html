@@ -7,20 +7,24 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- 头部导航 -->
-    <header>
-      <h1>🌸 {{ site.title }} 🌸</h1>
-      <p>{{ site.description }}</p>
-      <nav>
-        <a href="/">🏠 Home</a>
-        <a href="/about.html">📝 About</a>
-        <a href="/blog.html">📚 Blog</a>
-        <a href="/staff.html">💬 Staff</a>
-      </nav>
-    </header>
+  <!-- 顶部导航栏 -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">🌸</span>
+        <span class="logo-text">{{ site.title }}</span>
+      </div>
+      <div class="nav-links">
+        <a href="/" {% if page.url == "/" %}class="active"{% endif %}>首页</a>
+        <a href="/about.html" {% if page.url == "/about.html" %}class="active"{% endif %}>关于</a>
+        <a href="/blog.html" {% if page.url == "/blog.html" %}class="active"{% endif %}>博客</a>
+        <a href="/staff.html" {% if page.url == "/staff.html" %}class="active"{% endif %}>联系</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- 主内容 -->
+  <!-- 主内容区域 -->
+  <div class="container">
     <main>
       {{ content }}
     </main>

@@ -7,20 +7,24 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- 头部导航 -->
-    <header>
-      <h1>🌸 {{ site.title }} 🌸</h1>
-      <p>{{ site.description }}</p>
-      <nav>
-        <a href="/">🏠 Home</a>
-        <a href="/about.html">📝 About</a>
-        <a href="/blog.html">📚 Blog</a>
-        <a href="/staff.html">💬 Staff</a>
-      </nav>
-    </header>
+  <!-- 顶部导航栏 -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">🌸</span>
+        <span class="logo-text">{{ site.title }}</span>
+      </div>
+      <div class="nav-links">
+        <a href="/">首页</a>
+        <a href="/about.html">关于</a>
+        <a href="/blog.html">博客</a>
+        <a href="/staff.html">联系</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- 文章内容 -->
+  <!-- 主内容区域 -->
+  <div class="container">
     <main>
       <div class="hero-section">
         <h1>{{ page.title }}</h1>
